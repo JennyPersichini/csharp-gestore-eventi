@@ -58,7 +58,14 @@ namespace csharp_gestore_eventi
             //inserire gli opportuni controlli in modo che la data non sia già passata
 
             DateTime data = DateTime.Parse(dataString);
-            
+            if (data > DateTime.Today)
+            {
+                this.data = data;
+            }
+            else
+            {
+                throw new Exception("La data inserita è già passata");
+            }
             this.data = data;
         }
 
@@ -72,6 +79,16 @@ namespace csharp_gestore_eventi
             this.capienzaMassima = capienzaMassima;
         }
 
+        //METODI
+        public void PrenotaPosti(int numeriPostiPrenotare)
+        {
+
+        }
+
+        public void DisdiciPosti(int numeriPostiDisdire)
+        {
+
+        }
 
     }
 }
