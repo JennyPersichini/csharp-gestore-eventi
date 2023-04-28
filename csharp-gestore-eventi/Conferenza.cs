@@ -56,7 +56,8 @@ namespace csharp_gestore_eventi
                 + " - "
                 + this.GetRelatore()
                 + " - "
-                + this.GetPrezzoFormattato(this.GetPrezzo());
+                + this.GetPrezzoFormattato(this.GetPrezzo())
+                + " euro";
         }
     }
 }
