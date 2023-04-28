@@ -34,7 +34,25 @@ while (numeroEventiUtente != nuovoProgrammaEventi.EventiPresenti())
     Console.WriteLine("");       
 }
 
-Console.WriteLine("Ok! Arrivederci e Grazie!"); 
+//Stampare il numero di eventi presenti nel vostro programma eventi
+Console.WriteLine("Totale eventi: " + nuovoProgrammaEventi.EventiPresenti());
+
+//Stampare la lista di eventi inseriti nel vostro programma
+Console.WriteLine(nuovoProgrammaEventi);
+
+//Chiedere all’utente una data e stampare tutti gli eventi in quella data
+Console.WriteLine("Inserisci una data (dd/MM/yyyy): ");
+string dataUtente2 = Console.ReadLine();
+Console.WriteLine(ProgrammaEventi.StampaInConsole(nuovoProgrammaEventi.EventiInData(dataUtente2)));
+
+//Eliminare tutti gli eventi dal vostro programma
+nuovoProgrammaEventi.SvuotaLista();
+
+
+
+
+
+
 
 
 
