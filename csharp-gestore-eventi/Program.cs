@@ -17,6 +17,31 @@ int capienzaUtente = int.Parse(Console.ReadLine());
 Evento eventoUtente = new Evento(titoloUtente, dataUtente, capienzaUtente);
 Console.WriteLine(eventoUtente.ToString());
 
+Console.WriteLine("");
+
 //chiedere all’utente se e quante prenotazioni vuole fare e provare ad effettuarle
-Console.WriteLine("Vuoi prenotare dei posti? (si/no)");
-string InputUtente = Console.ReadLine();
+Console.WriteLine("Vuoi prenotare dei posti? (si/no) ");
+string InputUtentePrenotazione = Console.ReadLine();
+
+while (InputUtentePrenotazione == "si")
+{
+    Console.WriteLine("Quanti Posti desideri prenotare? ");
+    int numeroPostiPrenotare = int.Parse(Console.ReadLine());
+
+    eventoUtente.PrenotaPosti(numeroPostiPrenotare);
+    Console.WriteLine("");
+
+    int postiDisponibili = eventoUtente.GetCapienzaMassima() - eventoUtente.GetPostiPrenotati();
+
+    //Stampare a video il numero di posti prenotati e quelli disponibili
+    Console.WriteLine("Posti Disponibili Evento: " + postiDisponibili);
+    Console.WriteLine("Numero Posti Prenotati: " + eventoUtente.GetPostiPrenotati());
+    Console.WriteLine("------------------------------------------");
+    Console.WriteLine("");
+
+    Console.WriteLine("Vuoi prenotare altri posti? (si/no) ");
+    InputUtentePrenotazione = Console.ReadLine();
+}
+
+//chiedere all’utente se e quanti posti vuole disdire
+//stampare i posti residui e quelli prenotati
