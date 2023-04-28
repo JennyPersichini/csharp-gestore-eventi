@@ -15,11 +15,12 @@ namespace csharp_gestore_eventi
         private int postiPrenotati;
 
         //COSTRUTTORE
-        public Evento(string titolo, string dataStringa, int capienzaMassima)
+        public Evento(string titolo, string data, int capienzaMassima)
         {
-            this.titolo = titolo;
-            this.data = dataStringa;
-            this.capienzaMassima = capienzaMassima;
+            SetTitolo(titolo);
+            SetData(data);
+            SetCapienzaMassima(capienzaMassima);
+
             this.postiPrenotati = 0;
         }
 
@@ -42,7 +43,34 @@ namespace csharp_gestore_eventi
         }
 
         //SETTERS
-        
+        public void SetTitolo(string titolo)
+        {
+            //inserire gli opportuni controlli in modo che il titolo non sia vuoto
+            if (titolo == null || titolo == "")
+            {
+                throw new Exception("Non puoi lasciare il titolo vuoto");
+            }
+            this.titolo = titolo;
+        }
+
+        public void SetData(string dataString)
+        {
+            //inserire gli opportuni controlli in modo che la data non sia già passata
+
+            DateTime data = DateTime.Parse(dataString);
+            
+            this.data = data;
+        }
+
+        private void SetCapienzaMassima(int capienzaMassima)
+        {
+            //inserire gli opportuni controlli in modo che la capienza massima di posti sia un numero positivo
+            if (capienzaMassima < 0)
+            {
+                throw new Exception("Non puoi inserire un valore negativo");
+            }
+            this.capienzaMassima = capienzaMassima;
+        }
 
 
     }
