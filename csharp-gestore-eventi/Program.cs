@@ -31,16 +31,10 @@ while (numeroEventiUtente != nuovoProgrammaEventi.EventiPresenti())
     Evento eventoUtente = new Evento(titoloUtente, dataUtente, capienzaUtente);
     nuovoProgrammaEventi.AggiungiEvento(eventoUtente);
 
-    Console.WriteLine("");
-
-    Console.WriteLine(eventoUtente);
-    Console.WriteLine("Capienza Massima Evento: " + eventoUtente.GetCapienzaMassima());
-    Console.WriteLine("Numero Posti Prenotati: " + eventoUtente.GetPostiPrenotati());
-    Console.WriteLine("------------------------------------------");
-    Console.WriteLine("");
-
-     Console.WriteLine("Ok! Arrivederci e Grazie!");    
+    Console.WriteLine("");       
 }
+
+Console.WriteLine("Ok! Arrivederci e Grazie!"); 
 
 
 
