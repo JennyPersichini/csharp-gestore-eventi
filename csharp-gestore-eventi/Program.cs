@@ -18,20 +18,27 @@ int numeroEventiUtente = int.Parse(Console.ReadLine());
 
 while (numeroEventiUtente != nuovoProgrammaEventi.EventiPresenti())
 {
-    Console.Write("Inserisci il nome dell'evento: ");
-    string titoloUtente = Console.ReadLine();
+    try
+    {
+        Console.Write("Inserisci il nome dell'evento: ");
+        string titoloUtente = Console.ReadLine();
 
-    Console.Write("Inserisci la data dell'evento (dd/MM/yyyy): ");
-    string dataUtente = Console.ReadLine();
+        Console.Write("Inserisci la data dell'evento (dd/MM/yyyy): ");
+        string dataUtente = Console.ReadLine();
 
-    Console.Write("Inserisci il numero di posti totali: ");
-    int capienzaUtente = int.Parse(Console.ReadLine());
+        Console.Write("Inserisci il numero di posti totali: ");
+        int capienzaUtente = int.Parse(Console.ReadLine());
 
-    //Evento(titolo, data, capienzaMassima)
-    Evento eventoUtente = new Evento(titoloUtente, dataUtente, capienzaUtente);
-    nuovoProgrammaEventi.AggiungiEvento(eventoUtente);
+        //Evento(titolo, data, capienzaMassima)
+        Evento eventoUtente = new Evento(titoloUtente, dataUtente, capienzaUtente);
+        nuovoProgrammaEventi.AggiungiEvento(eventoUtente);
 
-    Console.WriteLine("");       
+        Console.WriteLine("");
+    } 
+    catch (Exception e)
+    {
+    Console.WriteLine(e.Message);
+    }
 }
 
 //Stampare il numero di eventi presenti nel vostro programma eventi
