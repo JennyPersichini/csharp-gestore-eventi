@@ -84,7 +84,7 @@ namespace csharp_gestore_eventi
         {            
             int numeroPostiDisponibili = this.capienzaMassima - this.postiPrenotati;
 
-            //Se l’evento non ha posti o non ha più posti disponibili deve sollevare un’eccezione.
+            //Se l’evento non ha posti(0) o non ha più posti disponibili deve sollevare un’eccezione.
             if (numeroPostiDisponibili == 0 || numeroPostiPrenotare > numeroPostiDisponibili)
             {
                 throw new Exception("Non è possibile prenotare per questo evento");
