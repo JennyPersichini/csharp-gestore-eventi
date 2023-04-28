@@ -113,7 +113,9 @@ namespace csharp_gestore_eventi
         {
             string dataStringa = this.data.ToString("dd/MM/yyyy");
 
-            return dataStringa + " - " + this.titolo;
+            return dataStringa 
+                + " - " 
+                + this.titolo;
            /* return "\n Titolo: "
                 + this.titolo
                 + "\n Data: "
