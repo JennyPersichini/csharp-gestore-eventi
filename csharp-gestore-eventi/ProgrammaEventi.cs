@@ -55,15 +55,38 @@ namespace csharp_gestore_eventi
 
         //3. un metodo statico che si occupa, presa una lista di eventi, di stamparla in Console,
         //o restituisca la rappresentazione in stringa della lista di eventi
+        public static string StampaInConsole(List<Evento> ListaEventi)
+        {
+            string eventi = "";
 
+            foreach (Evento evento in ListaEventi)
+            {
+                eventi += evento.ToString();
+                eventi += "\n";
+            }
+            return eventi;
+        }
 
         //4. un metodo che restituisce quanti eventi sono presenti attualmente
-
+        public int EventiPresenti()
+        {
+            return this.eventi.Count;
+        }
 
         //5. un metodo che svuota la lista di eventi
-
+        public void SvuotaLista()
+        {
+            this.eventi.Clear();
+        }
 
         //6. un metodo che restituisce una stringa che mostra il titolo del programma e tutti gli eventi aggiunti alla lista
+        public override string ToString()
+        {
+            return "Nome programma evento: "
+                + this.titolo
+                + "\n\n"
+                + ProgrammaEventi.StampaInConsole(this.eventi);
+        }
         
     }
 }
