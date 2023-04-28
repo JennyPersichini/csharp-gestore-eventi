@@ -41,6 +41,32 @@ while (numeroEventiUtente != nuovoProgrammaEventi.EventiPresenti())
     }
 }
 
+//BONUS
+
+Console.Write("Inserisci il nome della conferenza: ");
+string titoloConferenzaUtente = Console.ReadLine();
+
+Console.Write("Inserisci il nome del relatore: ");
+string relatoreConferenzaUtenteUtente = Console.ReadLine();
+
+Console.Write("Inserisci la data dell'evento (dd/MM/yyyy): ");
+string dataConferenzaUtente = Console.ReadLine();
+
+Console.Write("Inserisci il numero di posti totali: ");
+int capienzaConferenzaUtente = int.Parse(Console.ReadLine());
+
+Console.Write("Inserisci costo entrata: ");
+double prezzaConferenzaUtente = double.Parse(Console.ReadLine());
+
+//Conferenza(titolo, relatore, dataStringa, capienzaMassima, prezzo)
+Conferenza conferenzaUtente = new Conferenza(titoloConferenzaUtente, relatoreConferenzaUtenteUtente, dataConferenzaUtente, capienzaConferenzaUtente, prezzaConferenzaUtente);
+nuovoProgrammaEventi.AggiungiEvento(conferenzaUtente);
+
+Console.WriteLine("");
+
+//FINE BONUS
+
+
 //Stampare il numero di eventi presenti nel vostro programma eventi
 Console.WriteLine("Totale eventi: " + nuovoProgrammaEventi.EventiPresenti());
 
@@ -56,6 +82,16 @@ Console.WriteLine(ProgrammaEventi.StampaInConsole(nuovoProgrammaEventi.EventiInD
 
 //Eliminare tutti gli eventi dal vostro programma
 nuovoProgrammaEventi.SvuotaLista();
+
+
+
+
+
+
+
+
+
+
 
 
 
