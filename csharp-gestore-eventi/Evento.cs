@@ -98,7 +98,26 @@ namespace csharp_gestore_eventi
         public void DisdiciPosti(int numeriPostiDisdire)
         {
             //Se non ci sono i posti da disdire sufficienti, solleva un’eccezione
+            if (this.postiPrenotati - numeriPostiDisdire < 0)
+            {
+                throw new Exception("Non puoi disdire più posti di quelli prenotati");
+            }
+            this.postiPrenotati -= numeriPostiDisdire;
+        }
 
+        public override string ToString()
+        {
+            string dataStringa = this.data.ToString("dd/MM/yyyy");
+
+            return "Titolo: "
+                + this.titolo
+                + "\n Data: "
+                + dataStringa
+                + "\n Capienza massima: "
+                + this.capienzaMassima
+                + "\n Posti prenotati: "
+                + this.postiPrenotati
+                + "\n ---------------------------------------";
         }
 
     }
