@@ -109,7 +109,7 @@ namespace csharp_gestore_eventi
             this.postiPrenotati -= numeriPostiDisdire;
         }
 
-        public override string ToString()
+        public virtual string ToString()
         {
             string dataStringa = this.data.ToString("dd/MM/yyyy");
 
