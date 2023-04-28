@@ -113,7 +113,8 @@ namespace csharp_gestore_eventi
         {
             string dataStringa = this.data.ToString("dd/MM/yyyy");
 
-            return "\n Titolo: "
+            return dataStringa + " - " + this.titolo;
+           /* return "\n Titolo: "
                 + this.titolo
                 + "\n Data: "
                 + dataStringa
@@ -121,7 +122,7 @@ namespace csharp_gestore_eventi
                 + this.capienzaMassima
                 + "\n Posti prenotati: "
                 + this.postiPrenotati
-                + "\n -----------------------------";
+                + "\n -----------------------------";*/
         }
 
     }

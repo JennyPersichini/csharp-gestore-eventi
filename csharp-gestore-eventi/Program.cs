@@ -47,8 +47,10 @@ Console.WriteLine("Totale eventi: " + nuovoProgrammaEventi.EventiPresenti());
 //Stampare la lista di eventi inseriti nel vostro programma
 Console.WriteLine(nuovoProgrammaEventi);
 
+Console.WriteLine("");
+
 //Chiedere all’utente una data e stampare tutti gli eventi in quella data
-Console.WriteLine("Inserisci una data (dd/MM/yyyy): ");
+Console.Write("Inserisci una data (dd/MM/yyyy): ");
 string dataUtente2 = Console.ReadLine();
 Console.WriteLine(ProgrammaEventi.StampaInConsole(nuovoProgrammaEventi.EventiInData(dataUtente2)));
 
